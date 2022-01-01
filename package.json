@@ -1,0 +1,34 @@
+{
+  "name": "webtimesync",
+  "version": "1.0.0",
+  "description": "Simple Time Sync",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "publish": "npm run build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemon-mint/webtimesync.git"
+  },
+  "keywords": [
+    "time",
+    "sync",
+    "server",
+    "clock"
+  ],
+  "author": "lemon-mint",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/lemon-mint/webtimesync/issues"
+  },
+  "homepage": "https://github.com/lemon-mint/webtimesync#readme",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "kalmanjs": "^1.1.0",
+    "present": "^1.0.0"
+  }
+}
