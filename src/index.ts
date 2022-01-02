@@ -4,7 +4,7 @@ import present from "present";
 let LocalTimeOff = new Date().getTime() - present();
 let TimeOffset = 0;
 
-export function getTime() {
+export function getTime(): number {
   return present() + LocalTimeOff + TimeOffset;
 }
 console.log(present());
@@ -16,6 +16,10 @@ export function setTimeOffset(offset: number) {
 
 export function addTimeOffset(offset: number) {
   TimeOffset += offset;
+}
+
+export function getTimeOffset(): number {
+  return TimeOffset;
 }
 
 async function getServerOffset(endpoint: string) {
@@ -30,7 +34,7 @@ async function getServerOffset(endpoint: string) {
   // t1: the server time when the request was received (float)
   // t2: the server time when the response was sent (float)
   // UNITS: milliseconds since the epoch
-  // Example response: { t1: 1641046048901.079, t2: 1641046048901.079 }
+  // Example response: {"t1":1641083722668.4788,"t2":1641083722668.484}
   //
 
   const offset = (t1 - t0 + t2 - t3) / 2;
@@ -72,11 +76,3 @@ export async function syncTime(
 
   return offset;
 }
-
-async function main() {
-  console.log(await syncTime());
-
-  console.log(new Date().getTime() - getTime());
-}
-
-main().then();
