@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/lemon-mint/webtimesync#readme",
   "devDependencies": {
-    "typescript": "^4.5.4"
+    "typescript": "4.5.4"
   },
   "dependencies": {
     "kalmanjs": "^1.1.0",
